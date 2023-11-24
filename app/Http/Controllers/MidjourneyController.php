@@ -31,11 +31,11 @@ class MidjourneyController extends Controller
         $midjourneyTask->save();
 
         $request->validate([
-            'imagePrompts' => 'string',
-            'textPrompt' => 'string',
-            'parameters' => 'string',
-            'discordChannelId' => 'string',
-            'discordUserToken' => 'string',
+            'imagePrompts' => 'nullable|string',
+            'textPrompt' => 'required|string',
+            'parameters' => 'nullable|string',
+            'discordChannelId' => 'required|string',
+            'discordUserToken' => 'required|string',
         ]);
 
         $prompts = new Prompts(
