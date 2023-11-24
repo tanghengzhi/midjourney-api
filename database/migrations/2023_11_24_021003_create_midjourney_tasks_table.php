@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('midjourney_tasks', function (Blueprint $table) {
             $table->id();
+            $table->enum('status', ['created', 'completed'])->default('created');
+            $table->string('prompts')->nullable();
+            $table->string('image_url')->nullable();
             $table->timestamps();
         });
     }

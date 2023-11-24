@@ -40,12 +40,18 @@ class MidjourneyController extends Controller
 
         $prompts = new Prompts(
             $request->imagePrompts,
-            $request->textPrompt,
+            "[{$midjourneyTask->id}]{$request->textPrompt}",
             $request->paramters,
         );
         $midjourney = new Midjourney($request->discordChannelId, $request->discordUserToken);
 
         // It takes about 1 minute to generate and upscale an image
-        return $midjourney->generate($prompts);
+        $result = $midjourney->generate($prompts);
+
+        $midjourneyTask->prompts = $prompts->toString();
+        $midjourneyTask->image_url = $result->upscaled_photo_url;
+        $midjourneyTask->save();
+
+        return $midjourneyTask;
     }
 }
