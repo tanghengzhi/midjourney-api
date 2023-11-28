@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MidjourneyTask;
+use App\Services\ImageUploader;
 use Ferranfg\MidjourneyPhp\Midjourney;
 use Ferranfg\MidjourneyPhp\Prompts;
 use Illuminate\Http\Request;
@@ -49,7 +50,7 @@ class MidjourneyController extends Controller
         $result = $midjourney->generate($prompts);
 
         $midjourneyTask->prompts = $prompts->toString();
-        $midjourneyTask->image_url = $result->upscaled_photo_url;
+        $midjourneyTask->image_url = ImageUploader::upload($result->upscaled_photo_url);
         $midjourneyTask->save();
 
         return $midjourneyTask;
