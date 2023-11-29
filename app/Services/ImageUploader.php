@@ -12,8 +12,7 @@ class ImageUploader
             $path = "images/" . date("YmdHis") . md5($image) . ".jpg";
 
             try {
-                $result = Storage::disk("oss")->put($path, file_get_contents($image));
-                if ($result !== false) {
+                if (Storage::disk("oss")->put($path, file_get_contents($image))) {
                     $image = env('OSS_DOMAIN') . '/' . $path;
                 }
             } catch (\Throwable $exception) {
