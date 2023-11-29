@@ -14,7 +14,7 @@ class ImageUploader
 
             try {
                 if (Storage::disk("oss")->put($path, file_get_contents($image))) {
-                    $image = env('OSS_DOMAIN') . '/' . $path;
+                    $image = Storage::disk("oss")->url($path);
                 }
             } catch (\Throwable $exception) {
                 Log::error("Upload Failed: " . $exception->getMessage(), ['image' => $image]);
