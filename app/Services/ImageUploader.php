@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class ImageUploader
@@ -14,9 +15,12 @@ class ImageUploader
             try {
                 if (Storage::disk("oss")->put($path, file_get_contents($image))) {
                     $image = env('OSS_DOMAIN') . '/' . $path;
+                    Log::error("Upload Success");
+                } else {
+                    Log::error("Upload Failed");
                 }
             } catch (\Throwable $exception) {
-                \Log::error("Upload Failed: " . $exception->getMessage(), ['image' => $image]);
+                Log::error("Upload Failed: " . $exception->getMessage(), ['image' => $image]);
             } finally {
                 return $image;
             }
