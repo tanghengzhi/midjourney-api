@@ -42,7 +42,7 @@ class MidjourneyController extends Controller
         $prompts = new Prompts(
             $request->imagePrompts,
             "[{$midjourneyTask->id}]{$request->textPrompt}",
-            $request->paramters,
+            $request->parameters,
         );
         $midjourney = new Midjourney($request->discordChannelId, $request->discordUserToken);
 
