@@ -53,6 +53,8 @@ class MidjourneyController extends Controller
         $midjourneyTask->image_url = ImageUploader::upload($result->upscaled_photo_url);
         $midjourneyTask->save();
 
+        $lock->release();
+
         return $midjourneyTask;
     }
 }
