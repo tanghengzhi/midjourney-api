@@ -6082,12 +6082,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tanghengzhi/midjourney-discord-api-php.git",
-                "reference": "230f26fad87f0aa0eaed70a45f4925138108b434"
+                "reference": "279d1662b69384fae1bdf68a9c256ee503badfda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tanghengzhi/midjourney-discord-api-php/zipball/230f26fad87f0aa0eaed70a45f4925138108b434",
-                "reference": "230f26fad87f0aa0eaed70a45f4925138108b434",
+                "url": "https://api.github.com/repos/tanghengzhi/midjourney-discord-api-php/zipball/279d1662b69384fae1bdf68a9c256ee503badfda",
+                "reference": "279d1662b69384fae1bdf68a9c256ee503badfda",
                 "shasum": ""
             },
             "require": {
@@ -6127,7 +6127,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2023-12-18T03:25:34+00:00"
+            "time": "2023-12-18T10:41:57+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
