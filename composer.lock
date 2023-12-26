@@ -6085,12 +6085,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tanghengzhi/midjourney-discord-api-php.git",
-                "reference": "efe39daf56b96d1c78fab672a828d1d06e25d022"
+                "reference": "ccee395f29b8193ab8c215843885f2614dfb3d4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tanghengzhi/midjourney-discord-api-php/zipball/efe39daf56b96d1c78fab672a828d1d06e25d022",
-                "reference": "efe39daf56b96d1c78fab672a828d1d06e25d022",
+                "url": "https://api.github.com/repos/tanghengzhi/midjourney-discord-api-php/zipball/ccee395f29b8193ab8c215843885f2614dfb3d4c",
+                "reference": "ccee395f29b8193ab8c215843885f2614dfb3d4c",
                 "shasum": ""
             },
             "require": {
@@ -6130,7 +6130,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2023-12-25T07:31:17+00:00"
+            "time": "2023-12-26T09:12:54+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
